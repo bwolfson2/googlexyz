@@ -23,8 +23,9 @@ def results(request):
         if query == "":
             return render(request, 'engine/home.html')
         else:
-            result_cache = os.environ.get("CACHE_RESULTS_DIR","")
-            result_filename = f"CACHE_RESULTS_DIR/{query}.json"
+            result_cache = "engine/cached_results/"
+            os.makedirs(result_cache,exist_ok=True)
+            result_filename = f"{result_cache}/{query}.json"
             if os.path.exists(result_filename):
                 with open(result_filename, "r") as f:
                     results = json.loads(f.read())

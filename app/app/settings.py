@@ -123,4 +123,3 @@ STATIC_URL = '/static/'
 
 STATIC_ROOT = f"{BASE_DIR}/static"
 
-CACHE_RESULTS_DIR = "engine/cached_results/"
