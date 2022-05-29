@@ -1,0 +1,45 @@
+{% extends 'engine/base.html' %}
+{% load static %}
+{% block content %}
+<style>
+    div {
+        text-align: center;
+    }
+    .search-bar{
+        margin-top: 7%;
+    }
+</style>
+    <div class="home">
+        <h1>GoogleXYZ Search Engine</h1>
+        <img class="logo" src="{% static  'images/google_logo.png' %}" alt="GoogleXYZ search engine">
+        <div class="search-bar">
+            <form method="POST" id="googleXYZForm" action="results">
+                {% comment %} {% csrf_token %} {% endcomment %}
+                <input id="searchBox" class="form-control form-control-lg" type="text" placeholder="what are you searching for?" name="search">
+                <div class="search"> 
+                <button id="googleXYZButton" type="button" class="btn btn-dark" onclick="googleXYZSearch()">GoogleXYZ Search</button>
+                <button type="button" class="btn btn-light" onclick="googleSearch()">Google Search</button>
+                </div>
+            </form>
+        </div>
+       
+    </div>
+    <script type="text/javascript">
+    function googleSearch(){
+        var query = document.getElementById('searchBox').value;
+        var firstPart = "http://google.com/search?q=";
+        window.open(firstPart + query, '_blank');
+    }
+    function googleXYZSearch(){
+        console.log("submitting")
+        document.getElementById('googleXYZForm').submit();
+        document.getElementById("searchBox").disabled = true;
+        document.getElementById("googleXYZButton").disabled = true;
+        document.getElementById("searchBox").value = "Loading... we can't compete with Google's speed, but we can't wait to see what you find!";
+    }
+
+
+
+
+    </script>
+{% endblock content %}

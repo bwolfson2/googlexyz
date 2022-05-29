@@ -1,0 +1,13 @@
+gunicorn<=20.1.0
+beautifulsoup4==4.11.1
+Django==4.0.4
+numpy==1.22.4
+pandas==1.4.2
+requests==2.23.0
+scikit_learn==1.1.1
+torch==1.6.0
+sentence_transformers==2.2.0
+spacy==2.3.0
+lxml
+whitenoise
+

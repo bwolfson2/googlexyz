@@ -1,0 +1,7 @@
+.ipynb_checkpoints/
+.vscode/
+static/
+engine/__pycache__/
+app/__pycache__/
+app/static/js
+app/static/images

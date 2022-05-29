@@ -1,0 +1,4 @@
+- use the following  DISPLAY=":0" gcloud auth login when copying the command from gcloud auth
+- the video https://www.youtube.com/watch?v=TFsFLzNL5Fk&ab_channel=LondonAppDeveloper
+- don't forget static configuration docker-compose run --rm app sh -c "python manage.py collectstatic"
+

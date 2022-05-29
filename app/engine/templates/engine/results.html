@@ -1,0 +1,30 @@
+{% extends 'engine/base.html'%}
+
+{% block content %}
+<style>
+    .search-bar{
+        margin-top: 2%;
+    }
+    .search-results{
+        margin-top: 2%;
+    }
+</style>
+    <div class="search-bar">
+        <form method="POST">
+            {% comment %} {% csrf_token %} {% endcomment %}
+            <input class="form-control form-control-lg" type="text" placeholder="what are you searching for?" name="search" value="{{query}}">
+        </form>
+    </div>
+    <div class="search-results">
+        {% if results%}
+            <h4> You results are below: </h4>
+            {% for result in results%}
+                <h4><a href="https://{{ result.url}}">{{ result.title }}</a></h1>
+                <h5>{{ result.description }}</h1>
+                <a href="https://{{ result.url}}">{{ result.url }}</a>
+                <br/>
+                <br/>
+            {% endfor%}
+        {% endif%}
+    </div>
+{% endblock content %}
