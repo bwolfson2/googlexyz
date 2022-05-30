@@ -33,7 +33,7 @@ def parse_lukol_html(html):
 
 
 async def main():
-    browser = await launch({'headless': True, "browserWSEndpoint": 'ws://localhost:3000' })
+    browser = await launch({'headless': True, "browserWSEndpoint": 'ws://browser:3000' })
     page = await browser.newPage()
     urls = ["https://www.lukol.com/s.php?q=protect+plants#gsc.tab=0&gsc.q=protect%20plants&gsc.page={i+1}" for i in range(10)]
     htmls = []
